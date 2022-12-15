@@ -1,7 +1,8 @@
-import React from 'react'
 import './contact.css'
 import { GrMail } from 'react-icons/gr';
 import { SiGooglemessages, SiWhatsapp } from 'react-icons/si'
+import React, { useRef } from 'react';
+import emailjs from 'emailjs-com'
 
 
 const data = [
@@ -23,6 +24,20 @@ const data = [
 ]
 
 function Contact() {
+
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        emailjs.sendForm('service_wyj66nw', 'service_wyj66nw', form.current, 'FGER6S5WaPnM-YgaR')
+        .then((result) => {
+            console.log(result.text);
+        }, (error) => {
+            console.log(error.text);
+        });
+    };
+
     return (
         <section id='contact'>
             <h5>Get In Touch</h5>
@@ -51,13 +66,13 @@ function Contact() {
                         <a href='https://api.whatsapp.com/send?phone=+00200109342645'><small>Send A Message</small></a>
                     </article>
                 </div>
-                <form action=''>
+                <form ref={form} onSubmit={sendEmail}>
                     <input type="text" placeholder='Your Full Name' name='name' required/>
                     <input type="email" placeholder='Your Email' name='email'required/>
                     <textarea placeholder='Your Message' name='message' required></textarea>
-                    <a href='#' className='btn btn-primary'>
+                    <button type='submit' href='#' className='btn btn-primary'>
                         Send Message
-                    </a>
+                    </button>
                 </form>
             </div>
         </section>
