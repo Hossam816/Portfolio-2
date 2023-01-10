@@ -10,7 +10,6 @@
     border-radius: 2rem;
     background: linear-gradient(-90deg, transparent, var(--color-primary));
     display: grid;
-    place-items: center;
 }
 
 .about__me-image {

@@ -1,7 +1,7 @@
-import React from 'react'
-import './about.css'
-import ME from '../../assets/me-about.jpg'
-import { FaAward, FaUsers, FaFolder } from 'react-icons/fa'
+import React from 'react';
+import './about.css';
+import ME from '../../assets/se.jpg';
+import { FaAward, FaUsers, FaFolder } from 'react-icons/fa';
 
 function About() {
     return (
@@ -12,23 +12,23 @@ function About() {
             <div className='container about__container'>
                 <div className='about__me'>
                     <div className='about__me-image'>
-                        <img src={ME} alt="about-me" />
+                        <img src={ ME } alt="about-me" />
                     </div>
                 </div>
                 <div className='about-content'>
                     <div className='about__cards'>
                         <article className='about__card'>
-                            <FaAward className='about-icons'/>
+                            <FaAward className='about-icons' />
                             <h5>Experience</h5>
                             <small>3+ years of practising</small>
                         </article>
                         <article className='about__card'>
-                            <FaUsers className='about-icons'/>
+                            <FaUsers className='about-icons' />
                             <h5>Clients</h5>
                             <small>200+ worldwid</small>
                         </article>
                         <article className='about__card'>
-                            <FaFolder className='about-icons'/>
+                            <FaFolder className='about-icons' />
                             <h5>Projects</h5>
                             <small>10+ Completed Projects</small>
                         </article>
@@ -42,7 +42,7 @@ function About() {
                 </div>
             </div>
         </section>
-    )
+    );
 }
 
-export default About
+export default About;
